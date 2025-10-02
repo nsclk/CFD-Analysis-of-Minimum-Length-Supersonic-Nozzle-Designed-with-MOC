@@ -136,6 +136,60 @@ pip install gmsh numpy
 ```bash
 SU2_CFD -h  # Show help to confirm SU2 is installed
 ```
+## Quick Start
+
+Follow these steps to run the full workflow from nozzle design to CFD simulation.
+
+### 1. Design the Nozzle Contour (MATLAB)
+
+```matlab
+% In MATLAB:
+run('nozzle_design_with_moc.m')
+```
+
+This script will:
+- Compute MoC-generated wall points for a supersonic nozzle.
+- Export coordinates to `data/nozzle_wall.txt`.
+- Save contour plots in `figures/`.
+
+### 2. Generate Mesh Using Python + Gmsh
+
+```bash
+python gmsh_nozzle_mesh.py
+```
+
+This script will:
+- Read wall points (from MoC output or hardcoded profile).
+- Create structured mesh using `Transfinite` lines and surfaces.
+- Export mesh as `nozzle_xy_conformal.su2`.
+
+> Tip: Set `SHOW_GUI=True` in the script to preview mesh in Gmsh GUI.
+
+### 3. Run CFD Simulation with SU2
+
+```bash
+SU2_CFD nozzle_su2_config.cfg
+```
+
+This will:
+- Run compressible RANS-SST simulation on the nozzle mesh.
+- Output results: `flow.csv`, `surface_flow.csv`, `restart_flow.dat`, and `.vtk` files.
+- Save convergence history in `history.csv`.
+
+### 4. Visualize the Results
+
+Use:
+- **ParaView**: For `.vtk` files (Mach number, pressure, etc.)
+- **Python/Matplotlib**: For centerline plots from CSVs.
+- **Gmsh**: For mesh inspection.
+- **MATLAB**: For overlay plots or additional analysis.
+
+### Optional: Modify Simulation Parameters
+
+Edit `nozzle_su2_config.cfg` to:
+- Adjust inlet/outlet pressure.
+- Switch turbulence model.
+- Change CFL settings or output format (Tecplot, CSV, Paraview, etc).
 
 
 
