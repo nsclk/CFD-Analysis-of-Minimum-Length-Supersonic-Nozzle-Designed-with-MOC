@@ -132,9 +132,10 @@ pip install gmsh numpy
   - Download/build: [https://su2code.github.io](https://su2code.github.io)
   - Ensure `SU2_CFD` (Linux/macOS) or `SU2_CFD.exe` (Windows) is on your PATH.
   - Check installation:
-    ```bash
-    SU2_CFD -h  # Show help to confirm SU2 is installed
-    ```
+
+```bash
+SU2_CFD -h  # Show help to confirm SU2 is installed
+```
 
 
 
