@@ -512,7 +512,18 @@ This nozzle was designed using the **Method of Characteristics (MoC)** to ensure
   - **MoC Characteristic Lines**  
   Visualization of characteristic lines generated from the MoC design procedure, used to construct the divergent section.  
   ![MoC Plot](figures/characteristics.png)
-  
+
+
+### Mesh
+
+- The mesh was generated using **Gmsh** via a Python script and exported to SU2 format.
+- It is a structured, axisymmetric 2D mesh with finer resolution near the throat and wall boundaries to capture shock structures.
+- Total number of elements: ~50,000  
+- Boundary layers are adequately resolved to support SST turbulence modeling.
+
+![Mesh](figures/mesh.png)
+
+
 ### Flowfield Contours
 
 - **Mach Number Distribution**  
