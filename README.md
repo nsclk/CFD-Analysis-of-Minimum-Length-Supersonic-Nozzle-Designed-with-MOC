@@ -114,6 +114,11 @@ This repo contains the MATLAB design script, a Python mesher, an SU2 config, and
 - `gmsh` (Python API)
 - `numpy`
 
+```bash
+SU2_CFD -h  # Show help to confirm SU2 is installed
+pip install gmsh numpy
+```
+
 ### External Tools
 
 - **Gmsh** (v4.11+)
@@ -129,7 +134,6 @@ This repo contains the MATLAB design script, a Python mesher, an SU2 config, and
   - Check installation:
     ```bash
     SU2_CFD -h  # Show help to confirm SU2 is installed
-    pip install gmsh numpy
     ```
 
 
