@@ -267,4 +267,74 @@ This section outlines the full end-to-end process of designing a 2D supersonic n
 
 This modular workflow enables rapid prototyping and validation of nozzle designs under compressible flow conditions.
 
+##  Design Script (MATLAB)
+
+The nozzle design process begins with the **`nozzle_design_with_moc.m`** MATLAB script, which uses the **Method of Characteristics (MoC)** to compute a smooth, minimum-length supersonic nozzle contour.
+
+---
+
+### Key Features
+
+- **MoC for Supersonic Flow**: Computes the expansion region using characteristic lines for a given design Mach number.
+- **Throat & Exit Control**: Starts from a throat section and expands the flow through a controlled angle until desired exit Mach is reached.
+- **Visualization**: Plots the characteristic mesh and nozzle wall in `figures/`.
+
+---
+
+### Inputs
+
+Set at the top of the script:
+
+- `M_exit` – Desired exit Mach number (e.g., 2.0)
+- `gamma` – Specific heat ratio (e.g., 1.4 for air)
+- `n_char_lines` – Number of characteristic lines
+- `R_throat` – Radius of throat
+- `theta_max` – Maximum expansion angle (degrees)
+
+---
+
+### Outputs
+
+| Output File/Folder     | Description                                       |
+|------------------------|---------------------------------------------------|
+| `data/nozzle_wall.txt` | Wall coordinates from MoC (x, y) for meshing      |
+| `figures/`             | Contains plots for:                               |
+|                        | - Characteristic mesh                             |
+|                        | - Nozzle wall profile                             |
+|                        | - Expansion angle distributions                   |
+
+---
+
+### Method Summary
+
+1. **Prandtl-Meyer Function**: Converts Mach number to flow deflection angle.
+2. **MoC Grid Generation**: Builds characteristic lines from throat to exit.
+3. **Wall Points Extraction**: Locates wall shape by following the compatibility equations (K+ and K−).
+4. **Smoothing/Filtering**: Optional step for better meshing compatibility.
+5. **Export**: Wall coordinates written to `nozzle_wall.txt` for later use.
+
+---
+
+### Visualization Example
+
+Plots include:
+- θ vs x distribution
+- MoC grid lines
+- Nozzle shape overlaid with centerline
+
+All plots are saved as `.png` in the `figures/` folder for documentation or reporting.
+
+---
+
+### How to Run
+
+```matlab
+run('nozzle_design_with_moc.m')
+```
+
+This will automatically generate wall point data and figures.
+
+>  Note: You can modify `save_figures = true` or `write_wall_file = true` flags inside the script to control outputs.
+
+
 
