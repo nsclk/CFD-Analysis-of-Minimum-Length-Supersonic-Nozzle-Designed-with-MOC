@@ -496,3 +496,45 @@ This will launch the solver and begin iterating until the convergence criteria i
 - The simulation assumes air as an ideal gas with `γ = 1.4`.
 - The mesh and solver settings are tuned for high-speed nozzle flow (low subsonic to supersonic).
 - Feel free to modify outlet pressure or geometry to test choked/over-expanded/under-expanded regimes.
+
+## 📊 Results
+
+The following results demonstrate the flow behavior inside a converging-diverging supersonic nozzle designed for an exit Mach number of **3.05** using compressible RANS-SST simulations via SU2.
+
+This nozzle was designed using the **Method of Characteristics (MoC)** to ensure a **shock-free** expansion. The SU2 simulations confirm the design goal, with smooth and consistent flow acceleration from subsonic inlet to supersonic exit.
+
+### ✅ Flowfield Contours
+
+- **Mach Number Distribution**  
+  The Mach contour confirms shock-free expansion through the nozzle. The flow accelerates smoothly and reaches the design Mach number of **3.05** at the exit.  
+  ![Mach Contour](figures/mach_contour.png)
+
+- **Static Pressure Field**  
+  Pressure decreases continuously through the throat and divergent section with no signs of shock patterns, confirming an isentropic expansion.  
+  ![Pressure Contour](figures/pressure_field.png)
+
+### 📉 Centerline Flow Properties
+
+- **Centerline Mach Number**  
+  The flow accelerates smoothly from subsonic to the design exit Mach number of **3.05**.  
+  ![Centerline Mach](figures/centerline_mach.png)
+
+- **Centerline Static Pressure**  
+  Static pressure drops consistently through the nozzle, with no abrupt changes, indicating no shock waves.  
+  ![Wall Pressure Plot](figures/centerline_pressure_plot.png)
+
+### 📐 Nozzle Geometry Design
+
+- **MoC Characteristic Lines**  
+  Visualization of characteristic lines generated from the MoC design procedure, used to construct the divergent section.  
+  ![MoC Plot](figures/characteristics.png)
+
+- **Complete Nozzle Contour**  
+  Final nozzle geometry combining the cosine-bell converging section and MoC-based diverging section.  
+  ![Full Contour](figures/full_nozzle_contour.png)
+
+- **Converging Section Profile**  
+  The smooth contraction profile generated using a cosine-bell function ensures subsonic to sonic transition.  
+  ![Converging Profile](figures/converging_profile.png)
+
+
