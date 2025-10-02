@@ -17,7 +17,6 @@ This repo contains the MATLAB design script, a Python mesher, an SU2 config, and
 - [Meshing Script (Python--Gmsh)](#meshing-script-python--gmsh)
 - [SU2 Setup](#su2-setup)
 - [Results](#results)
-- [How to Reproduce](#how-to-reproduce)
 - [Troubleshooting](#troubleshooting)
 - [Cite / Acknowledgments](#cite--acknowledgments)
 - [License](#license)
@@ -536,6 +535,16 @@ This nozzle was designed using the **Method of Characteristics (MoC)** to ensure
 - **Centerline Static Pressure**  
   Static pressure drops consistently through the nozzle, with no abrupt changes, indicating no shock waves.  
   ![Wall Pressure Plot](figures/centerline_pressure_plot.png)
+
+  ## 📄 License
+
+This project is licensed under the MIT License.
+
+```
+MIT License
+
+Copyright (c) 2025 Enes Celik
+
 
 
 
