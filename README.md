@@ -17,8 +17,6 @@ This repo contains the MATLAB design script, a Python mesher, an SU2 config, and
 - [Meshing Script (Python--Gmsh)](#meshing-script-python--gmsh)
 - [SU2 Setup](#su2-setup)
 - [Results](#results)
-- [Troubleshooting](#troubleshooting)
-- [Cite / Acknowledgments](#cite--acknowledgments)
 - [License](#license)
 
 ---
