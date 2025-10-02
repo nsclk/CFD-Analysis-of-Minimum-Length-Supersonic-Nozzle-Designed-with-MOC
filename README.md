@@ -534,11 +534,10 @@ This nozzle was designed using the **Method of Characteristics (MoC)** to ensure
   Static pressure drops consistently through the nozzle, with no abrupt changes, indicating no shock waves.  
   ![Wall Pressure Plot](figures/centerline_pressure_plot.png)
 
-  ## 📄 License
+  ## License
 
 This project is licensed under the MIT License.
 
-```
 MIT License
 
 Copyright (c) 2025 Enes Celik
