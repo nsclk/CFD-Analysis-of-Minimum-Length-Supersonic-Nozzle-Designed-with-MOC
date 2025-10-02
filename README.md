@@ -101,5 +101,23 @@ This repo contains the MATLAB design script, a Python mesher, an SU2 config, and
   </tbody>
 </table>
 
+## Requirements
+
+### OS
+- Linux, macOS, or Windows (64-bit)
+
+### Languages & Runtimes
+- **MATLAB**: R2020a or newer (for `nozzle_design_with_moc.m`)
+- **Python**: 3.9+ (tested with 3.10/3.11)
+
+### Python Packages
+- `gmsh` (Python API)
+- `numpy`
+
+Install:
+```bash
+pip install gmsh numpy
+
+
 
 
