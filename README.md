@@ -505,10 +505,6 @@ This nozzle was designed using the **Method of Characteristics (MoC)** to ensure
 
 ### Nozzle Geometry Design
 
-- **MoC Characteristic Lines**  
-  Visualization of characteristic lines generated from the MoC design procedure, used to construct the divergent section.  
-  ![MoC Plot](figures/characteristics.png)
-
 - **Converging Section Profile**  
   The smooth contraction profile generated using a cosine-bell function ensures subsonic to sonic transition.  
   ![Converging Profile](figures/converging_profile.png)
@@ -516,6 +512,10 @@ This nozzle was designed using the **Method of Characteristics (MoC)** to ensure
 - **Complete Nozzle Contour**  
   Final nozzle geometry combining the cosine-bell converging section and MoC-based diverging section.  
   ![Full Contour](figures/full_nozzle_contour.png)
+
+  - **MoC Characteristic Lines**  
+  Visualization of characteristic lines generated from the MoC design procedure, used to construct the divergent section.  
+  ![MoC Plot](figures/characteristics.png)
   
 ### Flowfield Contours
 
