@@ -544,17 +544,6 @@ This nozzle was designed using the **Method of Characteristics (MoC)** to ensure
   Static pressure drops consistently through the nozzle, with no abrupt changes, indicating no shock waves.  
   ![Wall Pressure Plot](figures/centerline_pressure_plot.png)
 
-<img src="figures/mach_contour.png" alt="Mach Number Contour" width="600"/>
-<img src="figures/pressure_field.png" alt="Static Pressure Field" width="600"/>
-<img src="figures/wall_pressure_plot.png" alt="Wall Pressure Plot" width="600"/>
-<img src="figures/residuals_history.png" alt="Residual History" width="600"/>
-<img src="figures/centerline_mach.png" alt="Centerline Mach" width="600"/>
-<img src="figures/mesh_full.png" alt="Full Domain Mesh" width="600"/>
-<img src="figures/mesh_zoom.png" alt="Zoomed-In Mesh Near Throat" width="600"/>
-<img src="figures/characteristics.png" alt="MoC Characteristic Lines" width="600"/>
-<img src="figures/full_nozzle_contour.png" alt="Full Nozzle Contour" width="600"/>
-<img src="figures/converging_profile.png" alt="Converging Section Profile" width="600"/>
-
   ## License
 
 This project is licensed under the MIT License.
