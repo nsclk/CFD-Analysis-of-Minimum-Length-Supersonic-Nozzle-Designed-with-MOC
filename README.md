@@ -118,6 +118,23 @@ Install:
 ```bash
 pip install gmsh numpy
 
+### External Tools
+
+- **Gmsh** (v4.11+)
+  - Purpose: Structured mesh generation from MATLAB MoC geometry.
+  - Download: [https://gmsh.info](https://gmsh.info)
+  - Add Gmsh to your system PATH to enable GUI previews.
+  - Used by `gmsh_nozzle_mesh.py` to create a block-structured SU2 mesh.
+
+- **SU2** (v7.5+ or newer, with RANS turbulence enabled)
+  - Purpose: CFD simulation of compressible RANS–SST flows.
+  - Download/build: [https://su2code.github.io](https://su2code.github.io)
+  - Ensure `SU2_CFD` (Linux/macOS) or `SU2_CFD.exe` (Windows) is on your PATH.
+  - Check installation:
+    ```bash
+    SU2_CFD -h  # Show help to confirm SU2 is installed
+    ```
+
 
 
 
