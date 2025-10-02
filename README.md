@@ -3,7 +3,6 @@
 Design a minimum-length converging–diverging nozzle with the **Method of Characteristics (MoC)**, generate a block-structured quadrilateral mesh in **Gmsh**, and solve the compressible flow using **SU2 (RANS–SST)**.  
 This repo contains the MATLAB design script, a Python mesher, an SU2 config, and example figures/results.
 
-<p align="center"><em>MoC characteristics → nozzle contour → conformal blocks → SU2 solution</em></p>
 
 ---
 
