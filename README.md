@@ -190,5 +190,81 @@ Edit `nozzle_su2_config.cfg` to:
 - Switch turbulence model.
 - Change CFL settings or output format (Tecplot, CSV, Paraview, etc).
 
+##  Workflow
+
+This section outlines the full end-to-end process of designing a 2D supersonic nozzle using the Method of Characteristics (MoC), generating a conformal mesh, and simulating compressible flow using SU2.
+
+---
+
+### Step 1: Nozzle Contour Generation (MATLAB)
+
+**Script**: `nozzle_design_with_moc.m`
+
+- Implements the Method of Characteristics (MoC) to design a minimum-length supersonic nozzle.
+- Inputs include design Mach number, throat radius, and expansion angle.
+- Outputs:
+  - Wall coordinates saved as `nozzle_wall.txt`
+  - Internal MoC mesh points for visualization
+  - Figures showing characteristics lines and nozzle shape in `/figures/`
+
+---
+
+### Step 2: Mesh Generation with Gmsh (Python)
+
+**Script**: `gmsh_nozzle_mesh.py`
+
+- Uses the Gmsh Python API to generate a structured 2D mesh.
+- Geometry is built from the MoC-generated wall shape.
+- Boundary layers and symmetric midline are included.
+- Transfinite and recombine features ensure high mesh quality for CFD.
+- Outputs:
+  - `.su2` format mesh file (e.g., `nozzle_xy_conformal.su2`)
+  - Optional Gmsh GUI preview if `SHOW_GUI = True` is set.
+
+---
+
+### Step 3: CFD Simulation with SU2
+
+**Config file**: `nozzle_su2_config.cfg`
+
+- Solver: `RANS` with `SST` turbulence model
+- Boundary Conditions:
+  - Inlet: Total Pressure and Total Temperature
+  - Outlet: Fixed static pressure
+  - Wall: No-slip, adiabatic
+  - Symmetry: Midline
+- Mesh and solver settings tailored for compressible, high-speed flow.
+- Outputs:
+  - Volume solution: `flow.csv`
+  - Surface data: `surface_flow.csv`
+  - Restart data: `restart_flow.dat`
+  - Residual history: `history.csv`
+  - VTK files for visualization (if enabled)
+
+---
+
+### Step 4: Post-Processing and Visualization
+
+- **ParaView**: View Mach number, pressure, density contours.
+- **Python**: Analyze `flow.csv` and `surface_flow.csv` for centerline plots.
+- **MATLAB**: Compare CFD results with theoretical MoC lines.
+- **Figures**: Screenshots include:
+  - Characteristic mesh
+  - Conformal grid
+  - Mach number and pressure contours
+  - Centerline pressure and Mach distribution
+
+---
+
+### Summary of Outputs
+
+| Stage          | Output Type                     | Example File                |
+|----------------|----------------------------------|-----------------------------|
+| MATLAB         | Wall coordinates + plots         | `nozzle_wall.txt`, `/figures/` |
+| Python (Gmsh)  | Structured SU2 mesh              | `nozzle_xy_conformal.su2`  |
+| SU2 Solver     | Simulation results               | `flow.csv`, `.vtk`, `.dat` |
+| Post-processing| Visual plots & analysis          | ParaView screenshots, CSV  |
+
+This modular workflow enables rapid prototyping and validation of nozzle designs under compressible flow conditions.
 
 
